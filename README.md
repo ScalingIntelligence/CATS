@@ -1,4 +1,6 @@
-Welcome to the official implementation of "CATS: Contextually-Aware Thresholding for Sparsity in Large Language Models." We are thrilled to announce that our paper has been accepted for presentation at [COLM 2024](https://colmweb.org/index.html)!
+# CATS: Contextually-Aware Thresholding for Sparsity in Large Language Models
+
+Welcome to the official implementation of [CATS: Contextually-Aware Thresholding for Sparsity in Large Language Models](https://arxiv.org/pdf/2404.08763). We are thrilled to announce that our paper has been accepted for presentation at [COLM 2024](https://colmweb.org/index.html)!
 
 If you find our work useful in your research, please consider citing our paper:
 
