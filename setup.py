@@ -8,7 +8,7 @@ with open('requirements.txt') as f:
 setup(
    name='simple-cats',
    version='0.1.2',
-   package_dir={'': 'src'},
+   package_dir={'simple_cats': 'src'},
    packages=find_packages(where='src'),
    description='Python package for CATS paper',
    long_description=open('README.md').read(),
