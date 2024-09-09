@@ -11,6 +11,7 @@ from transformers import (
     PretrainedConfig,
     PreTrainedModel,
     AutoConfig,
+    MistralConfig
     # GemmaForCausalLM,
 )
 
@@ -131,7 +132,7 @@ class CatsConfig(PretrainedConfig):
 
     def __init__(
         self,
-        wrapped_model_config=AutoConfig.from_pretrained(MISTRAL_7B),
+        wrapped_model_config=MistralConfig(),
         wrapped_model_class_name: str = "MistralForCausalLM",
         pre_target_modules: List[str] = [],
         post_target_modules: List[str] = ["act_fn"],
