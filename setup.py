@@ -8,8 +8,8 @@ with open('requirements.txt') as f:
 setup(
    name='simple-cats',
    version='0.1.2',
-   package_dir={'simple_cats': 'src'},
-   packages=find_packages(where='src'),
+    package_dir={'simple_cats': 'src'},
+    pakages=['simple_cats'],
    description='Python package for CATS paper',
    long_description=open('README.md').read(),
    long_description_content_type='text/markdown',
