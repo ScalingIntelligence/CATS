@@ -6,7 +6,7 @@ with open('requirements.txt') as f:
     requirements = f.read().splitlines()
 
 setup(
-   name='simple-cats',
+   name='simple_cats',
    version='0.1.2',
     package_dir={'': 'src'},
     packages=find_packages(where='src'),
