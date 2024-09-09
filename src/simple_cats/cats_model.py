@@ -3,6 +3,8 @@ import importlib
 import json
 import os
 import warnings
+import tqdm
+
 from typing import List, Dict
 
 import torch
@@ -31,6 +33,7 @@ class Cats(nn.Module):
         hist_min: int = -5,
         hist_max: int = 5,
         pre_apply: bool = False,
+        post_apply: bool = True,
     ):
         super(Cats, self).__init__()
         self.wrapped_module = wrapped_module
@@ -50,6 +53,7 @@ class Cats(nn.Module):
         self.print_sparsity = True
         self.is_kernel = False
         self.pre_apply = pre_apply
+        self.post_apply = post_apply
 
     def disable_collect_stats(self):
         self.collect_stats = False
@@ -350,3 +354,10 @@ def get_cats_model(
         cats_model.inject_kernel()
 
     return cats_model
+
+
+def set_thresholds(model, eval_dataloader):
+    model.enable_collect_stats()
+    for step, batch in tqdm(enumerate(eval_dataloader, start=1), total=len(eval_dataloader)):
+        _ = model(batch["input_ids"])
+    model.set_thresholds()
