@@ -1,6 +1,6 @@
 import torch
 
-from src.simple_cats.kernels.triton_kernel.mm_kernels import (
+from ..kernels.triton_kernel.mm_kernels import (
     gather_gemv_elemul_flag_3d,
     gather_transposed_gemv_flag_3d,
 )
