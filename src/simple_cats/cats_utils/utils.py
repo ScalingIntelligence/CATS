@@ -2,7 +2,7 @@ import logging
 import warnings
 import torch
 
-from src.kernels.sparse_mm import gemv_gemv_triton, gemv_triton
+from src.simple_cats.kernels.sparse_mm import gemv_gemv_triton, gemv_triton
 
 
 logger = logging.getLogger(__name__)
