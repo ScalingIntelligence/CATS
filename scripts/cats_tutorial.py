@@ -488,7 +488,7 @@ if __name__ == "__main__":
     base_config["use_lora"] = False
     base_config["train_model"] = False
     base_config["run_generation"] = True
-    base_config["run_generation_wo_kernel"] = False
+    base_config["run_generation_wo_kernel"] = True
 
     base_config["model_name"] = "Base_Mistral"
     run_experiment(base_config)
