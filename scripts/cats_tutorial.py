@@ -483,13 +483,12 @@ if __name__ == "__main__":
     }
 
     # To run experiment with base model only
-    # base_config = default_config.copy()
-    # base_config["use_cats"] = False
-    # base_config["use_lora"] = False
-    # base_config["model_name"] = "Base_Mistral"
-    # run_experiment(base_config)
-
-    # To run experiment with different target modules
+    base_config = default_config.copy()
+    base_config["use_cats"] = False
+    base_config["use_lora"] = False
+    base_config["train_model"] = False
+    base_config["model_name"] = "Base_Mistral"
+    run_experiment(base_config)
 
     # To run experiments with different configurations:
     target_sparsities = [0.5, 0.7, 0.85, 0.90]
