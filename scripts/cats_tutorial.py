@@ -22,7 +22,7 @@ from peft.utils.other import fsdp_auto_wrap_policy
 from torch.optim.lr_scheduler import OneCycleLR, CosineAnnealingLR
 
 
-from experiments.data.get_dataset import get_dataset
+from src.simple_cats.data.get_dataset import get_dataset
 from src.simple_cats.cats_model import (
     CatsModelForCausalLM,
     CatsConfig,
