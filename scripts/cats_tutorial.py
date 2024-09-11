@@ -22,8 +22,8 @@ from peft.utils.other import fsdp_auto_wrap_policy
 from torch.optim.lr_scheduler import OneCycleLR, CosineAnnealingLR
 
 
-from src.simple_cats.data.get_dataset import get_dataset
-from src.simple_cats.cats_model import (
+from simple_cats.data.get_dataset import get_dataset
+from simple_cats.cats_model import (
     CatsModelForCausalLM,
     CatsConfig,
     get_cats_model,
@@ -378,19 +378,19 @@ def run_experiment(config):
                 tokenizer,
                 with_kernel_injection=False,
             )
-        if accelerator.is_main_process:
-            record_measurements(
-                "timing_measurements.csv",
-                {
-                    "Timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
-                    "Model Type": "CATS" if config["use_cats"] else "Base",
-                    "With Kernel Injection": False,
-                    "Elapsed Time": elapsed_time_without,
-                    "Target Sparsity": config["target_sparsity"]
-                    if config["use_cats"]
-                    else "N/A",
-                },
-            )
+            if accelerator.is_main_process:
+                record_measurements(
+                    "timing_measurements.csv",
+                    {
+                        "Timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
+                        "Model Type": "CATS" if config["use_cats"] else "Base",
+                        "With Kernel Injection": False,
+                        "Elapsed Time": elapsed_time_without,
+                        "Target Sparsity": config["target_sparsity"]
+                        if config["use_cats"]
+                        else "N/A",
+                    },
+                )
 
         # Run with kernel injection for CATS model
         if config["use_cats"] and config["use_kernel_injection"]:

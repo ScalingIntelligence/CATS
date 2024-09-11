@@ -16,7 +16,7 @@ setup(
    author='Jeyong Lee, Donghyun Lee, ...',
    author_email='je-yong.lee@worc.ox.ac.uk',
    url='https://github.com/ScalingIntelligence/CATS',
-   install_requires=['transformers', 'torch', 'triton', 'accelerate','bitsandbytes', 'peft', 'evaluate'],
+   install_requires=['transformers', 'torch', 'triton', 'scikit-learn', 'matplotlib', 'accelerate','bitsandbytes', 'peft', 'evaluate'],
    classifiers=[
        'Programming Language :: Python :: 3',
        'License :: OSI Approved :: MIT License',
