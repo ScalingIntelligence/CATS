@@ -5,7 +5,7 @@ from datasets import load_dataset
 import pickle
 
 from .dataset import Dataset
-from utils.constants import (
+from ..cats_utils.constants import (
     QNLI,
     SST2,
     COLA,

@@ -37,10 +37,10 @@ accelerate
 wandb
 deepspeed
 equinox # latest: 0.11.2
-transformers==4.36.2
+transformers==4.42
 triton==2.1.0
 huggingface_hub #~=0.12.0
-tokenizers #~=0.11.4
+tokenizers==0.19.0 #~=0.11.4
 datasets #~=2.9.0
 testresources
 mpi4py-mpich
@@ -49,3 +49,4 @@ torch
 peft
 lm_eval
 trl
+bitsandbytes

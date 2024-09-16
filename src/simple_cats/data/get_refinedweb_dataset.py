@@ -4,10 +4,9 @@ import pickle
 import torch
 import os
 
-from utils.utils import is_mainprocess
 from .dataset import Dataset
 from datasets import Dataset as D
-from utils.constants import REFINED_WEB, MISTRAL_CONTEXT_LENGTH
+from ..cats_utils.constants import REFINED_WEB, MISTRAL_CONTEXT_LENGTH
 
 
 class RefinedWeb(Dataset):

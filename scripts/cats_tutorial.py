@@ -28,7 +28,7 @@ from simple_cats.cats_model import (
     CatsConfig,
     get_cats_model,
 )
-from utils.constants import MISTRAL_7B, REFINED_WEB, LLAMA_7B
+from simple_cats.cats_utils.constants import MISTRAL_7B, REFINED_WEB, LLAMA_7B
 
 
 def print_gpu_memory():
@@ -491,9 +491,10 @@ if __name__ == "__main__":
     base_config["run_generation_wo_kernel"] = True
 
     base_config["model_name"] = "Base_Mistral"
-    run_experiment(base_config)
+    # run_experiment(base_config)
 
     # To run experiments with different configurations:
+    target_sparsities = [0.5, 0.7, 0.85, 0.90]
     # for sparsity in target_sparsities:
     #     config = default_config.copy()
     #     config["target_sparsity"] = sparsity
@@ -525,6 +526,7 @@ if __name__ == "__main__":
         }
         config["run_generation"] = True
         config["train_model"] = False
+        print(config)
         run_experiment(config)
 
         # config["target_modules"] = [

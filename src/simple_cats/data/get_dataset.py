@@ -7,7 +7,7 @@ from .get_samsum_dataset_ import Samsum
 from .get_glue_dataset_classification import GLUEDataset
 from .get_refinedweb_dataset import RefinedWeb
 
-from utils.constants import (
+from ..cats_utils.constants import (
     COLA,
     BILLSUM,
     SQUAD,
