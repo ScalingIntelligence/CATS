@@ -520,9 +520,9 @@ if __name__ == "__main__":
         config["pre_target_modules"] = ["q_proj", "o_proj", "gate_proj"]
         config["kernel_inject_targets"] = {
             "mlp": 2,
-            "q_proj": 1,
-            "o_proj": 1,
-            "gate_proj": 1,
+            # "q_proj": 1,
+            # "o_proj": 1,
+            # "gate_proj": 1,
         }
         config["run_generation"] = True
         config["train_model"] = False
