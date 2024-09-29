@@ -527,7 +527,7 @@ if __name__ == "__main__":
             # "gate_proj": 1,
         }
         config["run_generation"] = True
-        config["run_generation_wo_kernel"] = True
+        config["run_generation_wo_kernel"] = False
         config["train_model"] = False
         print(config)
         run_experiment(config)
