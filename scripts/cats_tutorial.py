@@ -518,7 +518,7 @@ if __name__ == "__main__":
         config = default_config.copy()
         config["target_sparsity"] = sparsity
         config["post_target_modules"] = ["act_fn"]
-        config["pre_target_modules"] = ["q_proj", "o_proj", "gate_proj"]
+        config["pre_target_modules"] = []#"q_proj", "o_proj", "gate_proj"]
         config["kernel_inject_targets"] = {
             "mlp": 2,
             # "q_proj": 1,
@@ -526,6 +526,7 @@ if __name__ == "__main__":
             # "gate_proj": 1,
         }
         config["run_generation"] = True
+        config["run_generation_wo_kernel"] = False
         config["train_model"] = False
         print(config)
         run_experiment(config)
