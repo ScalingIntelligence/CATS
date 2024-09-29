@@ -300,9 +300,9 @@ def run_experiment(config):
         accelerator.wait_for_everyone()
 
     # Calculate initial perplexity
-    # initial_perplexity = calculate_perplexity(model, test_dataloader, accelerator)
-    # if accelerator.is_main_process:
-    #     print(f"Initial model perplexity: {initial_perplexity}")
+    initial_perplexity = calculate_perplexity(model, test_dataloader, accelerator)
+    if accelerator.is_main_process:
+        print(f"Initial model perplexity: {initial_perplexity}")
 
     # Train the model
     if config["train_model"]:
