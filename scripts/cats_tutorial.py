@@ -492,7 +492,7 @@ if __name__ == "__main__":
     base_config["run_generation_wo_kernel"] = True
 
     base_config["model_name"] = "Base_Mistral"
-    run_experiment(base_config)
+    # run_experiment(base_config)
 
     # To run experiments with different configurations:
     target_sparsities = [0.5, 0.7, 0.85, 0.90]
@@ -528,7 +528,7 @@ if __name__ == "__main__":
         config["run_generation"] = True
         config["train_model"] = False
         print(config)
-        # run_experiment(config)
+        run_experiment(config)
 
         # config["target_modules"] = [
         #     "post_attention_layernorm",
