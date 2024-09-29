@@ -211,6 +211,7 @@ def run_experiment(config):
         )
         model.to(torch.bfloat16)
         del base_model
+        torch.cuda.empty_cache()
     else:
         model = base_model
 
@@ -299,9 +300,9 @@ def run_experiment(config):
         accelerator.wait_for_everyone()
 
     # Calculate initial perplexity
-    initial_perplexity = calculate_perplexity(model, test_dataloader, accelerator)
-    if accelerator.is_main_process:
-        print(f"Initial model perplexity: {initial_perplexity}")
+    # initial_perplexity = calculate_perplexity(model, test_dataloader, accelerator)
+    # if accelerator.is_main_process:
+    #     print(f"Initial model perplexity: {initial_perplexity}")
 
     # Train the model
     if config["train_model"]:
@@ -517,6 +518,7 @@ if __name__ == "__main__":
 
     for sparsity in target_sparsities:
         config = default_config.copy()
+        config["use_lora"] = False
         config["target_sparsity"] = sparsity
         config["post_target_modules"] = ["act_fn"]
         config["pre_target_modules"] = []#"q_proj", "o_proj", "gate_proj"]
