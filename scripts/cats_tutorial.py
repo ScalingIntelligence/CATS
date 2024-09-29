@@ -204,14 +204,12 @@ def run_experiment(config):
         model = get_cats_model(
             base_model,
             target_sparsity=config["target_sparsity"],
-            is_share_params=False,
+            is_share_params=True,
             post_target_modules=config["post_target_modules"],
             pre_target_modules=config["pre_target_modules"],
             kernel_inject_targets=config["kernel_inject_targets"],
         )
         model.to(torch.bfloat16)
-        del base_model
-        torch.cuda.empty_cache()
     else:
         model = base_model
 
