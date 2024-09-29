@@ -5,7 +5,7 @@ from ..kernels.triton_kernel.mm_kernels import (
     gather_transposed_gemv_flag_3d,
 )
 
-
+@torch.compile
 def gemv_gemv_triton(x, x_1, Wup, Wdownt, threshold):
     flags = torch.abs(x_1) > threshold
     x = gather_gemv_elemul_flag_3d(x, x_1, Wup, flags)
