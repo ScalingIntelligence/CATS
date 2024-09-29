@@ -210,6 +210,7 @@ def run_experiment(config):
             kernel_inject_targets=config["kernel_inject_targets"],
         )
         model.to(torch.bfloat16)
+        del base_model
     else:
         model = base_model
 
@@ -469,7 +470,7 @@ if __name__ == "__main__":
         "num_epochs": 1,
         "max_steps": 1000,
         "learning_rate": 5e-5,
-        "total_eval_steps": 5,
+        "total_eval_steps": 2,
         "max_lengths": 1500,
         "train_model": True,
         "run_generation_wo_kernel": False,
