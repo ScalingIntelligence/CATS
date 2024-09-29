@@ -39,11 +39,9 @@ def custom_forward_for_swiglu(self, x):
     beam_width, seq_len, _ = x.shape
     if seq_len > 1:
         print("Prefill stage")
-        print(self.act_fn.threshold)
         return self.down_proj(self.act_fn(self.gate_proj(x)) * self.up_proj(x))
 
     threshold = self.act_fn.threshold
-
     return gemv_gemv_triton(
         x,
         self.act_fn(self.gate_proj(x)),

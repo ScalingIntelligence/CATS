@@ -209,7 +209,6 @@ def run_experiment(config):
             pre_target_modules=config["pre_target_modules"],
             kernel_inject_targets=config["kernel_inject_targets"],
         )
-        model.to(torch.bfloat16)
     else:
         model = base_model
 
