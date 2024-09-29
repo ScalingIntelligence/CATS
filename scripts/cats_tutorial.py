@@ -406,6 +406,7 @@ def run_experiment(config):
                     _ = model.generate(
                         input_ids=input_ids,
                         max_length=config["max_lengths"],
+                        min_length=config["max_lengths"],
                         pad_token_id=tokenizer.eos_token_id,
                         use_cache=True,
                         do_sample=True,
@@ -526,7 +527,7 @@ if __name__ == "__main__":
             # "gate_proj": 1,
         }
         config["run_generation"] = True
-        config["run_generation_wo_kernel"] = False
+        config["run_generation_wo_kernel"] = True
         config["train_model"] = False
         print(config)
         run_experiment(config)
