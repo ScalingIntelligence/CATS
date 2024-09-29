@@ -209,6 +209,7 @@ def run_experiment(config):
             pre_target_modules=config["pre_target_modules"],
             kernel_inject_targets=config["kernel_inject_targets"],
         )
+        del base_model
     else:
         model = base_model
 
@@ -526,7 +527,7 @@ if __name__ == "__main__":
             # "gate_proj": 1,
         }
         config["run_generation"] = True
-        config["run_generation_wo_kernel"] = False
+        config["run_generation_wo_kernel"] = True
         config["train_model"] = False
         print(config)
         run_experiment(config)
