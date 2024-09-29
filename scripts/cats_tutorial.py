@@ -528,7 +528,7 @@ if __name__ == "__main__":
         config["run_generation"] = True
         config["train_model"] = False
         print(config)
-        run_experiment(config)
+        # run_experiment(config)
 
         # config["target_modules"] = [
         #     "post_attention_layernorm",
