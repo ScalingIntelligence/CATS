@@ -195,7 +195,7 @@ def run_experiment(config):
     # Load base model
     base_model = AutoModelForCausalLM.from_pretrained(
         config["model_dir"],
-        # torch_dtype=torch.bfloat16,
+        torch_dtype=torch.bfloat16,
         attn_implementation="flash_attention_2",
     )
 
