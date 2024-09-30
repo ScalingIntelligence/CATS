@@ -495,7 +495,7 @@ if __name__ == "__main__":
     # run_experiment(base_config)
 
     # To run experiments with different configurations:
-    target_sparsities = [0.5, 0.7, 0.85, 0.90]
+    target_sparsities = [0.99, 0.5, 0.7, 0.85, 0.90]
     # for sparsity in target_sparsities:
     #     config = default_config.copy()
     #     config["target_sparsity"] = sparsity
