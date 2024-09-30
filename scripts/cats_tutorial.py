@@ -51,6 +51,7 @@ def run_evaluation(
             if step > total:
                 break
             input_ids = batch["input_ids"].to(model.device)
+            print(input_ids.shape)
             outputs = model.generate(
                 input_ids=input_ids,
                 max_length=max_lengths,
