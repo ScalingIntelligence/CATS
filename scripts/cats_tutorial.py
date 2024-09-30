@@ -471,7 +471,7 @@ if __name__ == "__main__":
         "max_steps": 1000,
         "learning_rate": 5e-5,
         "total_eval_steps": 2,
-        "max_lengths": 1500,
+        "max_lengths": 2500,
         "train_model": True,
         "run_generation_wo_kernel": False,
         "use_kernel_injection": True,

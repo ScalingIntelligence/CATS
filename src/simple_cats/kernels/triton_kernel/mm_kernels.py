@@ -273,6 +273,7 @@ def gather_gemv_elemul_flag_3d(
         wup.stride(0),  # strides
         beam_width,  # Can't use kwargs because auto-tuner requires args
     )
+    print(gather_gemv_elemul_flag_kernel.best_config)
     return output.to(x.dtype)
 
 
